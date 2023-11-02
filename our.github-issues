@@ -1,0 +1,22 @@
+[
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "### Our Open Issues"
+  },
+  {
+    "kind": 2,
+    "language": "github-issues",
+    "value": "repo:lakruzz/dx-intro-tutorial is:open"
+  },
+  {
+    "kind": 1,
+    "language": "markdown",
+    "value": "### Issues That Needs Help"
+  },
+  {
+    "kind": 2,
+    "language": "github-issues",
+    "value": "repo:lakruzz/dx-intro-tutorial is:open is:issue label:\"help wanted\""
+  }
+]
