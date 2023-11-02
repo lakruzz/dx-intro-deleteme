@@ -1,25 +1,27 @@
 name: Manually triggered issue metrics
+
 on:
-workflow_dispatch:
+  workflow_dispatch:
 
 permissions:
-issues: write
-pull-requests: read
+  issues: write
+  pull-requests: read
 
 jobs:
-build:
-name: issue metrics
-runs-on: ubuntu-latest
-steps:
-- name: Run issue-metrics tool
-uses: github/issue-metrics@v2
-env:
-GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-SEARCH_QUERY: 'repo:${{ github.repository }} is:issue'
-
-- name: Create issue
-uses: peter-evans/create-issue-from-file@v4
-with:
-title: Monthly issue metrics report
-token: ${{ secrets.GITHUB_TOKEN }}
-content-filepath: ./issue_metrics.md
+  build:
+    name: issue metrics
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run issue-metrics tool
+        uses: github/issue-metrics@v2
+          env:
+            GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+            SEARCH_QUERY: 'repo:${{ github.repository }} is:issue'
+        
+      - name: Create issue
+        uses: peter-evans/create-issue-from-file@v4
+          with:
+            title: Monthly issue metrics report
+            token: ${{ secrets.GITHUB_TOKEN }}
+            content-filepath: ./issue_metrics.md
+    
