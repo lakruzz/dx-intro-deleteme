@@ -1,5 +1,6 @@
 {
     "recommendations": [
-        "ms-vscode.vscode-github-issue-notebooks"
+        "ms-vscode.vscode-github-issue-notebooks",
+        "github.copilot"
     ]
 }
